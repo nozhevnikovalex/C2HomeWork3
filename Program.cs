@@ -1,13 +1,13 @@
 ﻿using System;
 
-// IOutput
+// 1.IOutput
 public interface IOutput
 {
     void Show();
     void Show(string info);
 }
 
-// IMath
+// 2.IMath
 public interface IMath
 {
     int Max();
@@ -16,6 +16,7 @@ public interface IMath
     bool Search(int valueToSearch);
 }
 
+// 3.ISort
 public interface ISort
 {
     void SortAsc();
@@ -33,7 +34,7 @@ public class MyArray : IOutput, IMath, ISort
         array = values;
     }
 
-    // Реалізація методу Show() із інтерфейсу IOutput
+    // 1.IOutput
     public void Show()
     {
         Console.WriteLine("Елементи масиву:");
@@ -43,8 +44,7 @@ public class MyArray : IOutput, IMath, ISort
         }
         Console.WriteLine();
     }
-
-    // Реалізація методу Show(string info) із інтерфейсу IOutput
+        
     public void Show(string info)
     {
         Console.WriteLine($"Елементи масиву: {info}");
@@ -55,43 +55,39 @@ public class MyArray : IOutput, IMath, ISort
         Console.WriteLine();
     }
 
+    // IMath
     public int Max()
     {
         return array.Max();
     }
-
-    // Реалізація методу Min() із інтерфейсу IMath
+    
     public int Min()
     {
         return array.Min();
     }
 
-    // Реалізація методу Avg() із інтерфейсу IMath
     public double Avg()
     {
         return array.Average();
     }
 
-    // Реалізація методу Search(int valueToSearch) із інтерфейсу IMath
     public bool Search(int valueToSearch)
     {
         return array.Contains(valueToSearch);
     }
 
-    // Реалізація методу SortAsc() із інтерфейсу ISort
+    // 3.ISort
     public void SortAsc()
     {
         Array.Sort(array);
     }
 
-    // Реалізація методу SortDesc() із інтерфейсу ISort
     public void SortDesc()
     {
         Array.Sort(array);
         Array.Reverse(array);
     }
-
-    // Реалізація методу SortByParam(bool isAsc) із інтерфейсу ISort
+        
     public void SortByParam(bool isAsc)
     {
         if (isAsc)
@@ -110,7 +106,7 @@ class Program
 {
     static void Main()
     {        
-        int[] testArray = { 1, 2, 3, 4, 5 };
+        int[] testArray = { 101, 21, 33, 42, 54 };
         MyArray myArray = new MyArray(testArray);
 
         myArray.Show();
