@@ -23,7 +23,7 @@ public interface ISort
     void SortByParam(bool isAsc);
 }
 
-// Клас MyArray, який імплементує інтерфейс IOutput
+// MyArray
 public class MyArray : IOutput, IMath, ISort
 {
     private int[] array;
