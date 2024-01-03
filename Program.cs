@@ -7,6 +7,7 @@ public interface IOutput
     void Show(string info);
 }
 
+// IMath
 public interface IMath
 {
     int Max();
